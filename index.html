@@ -1,0 +1,66 @@
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+  <title>今日の体温</title>
+  <style>
+    body {
+      font-family: 'Kosugi Maru', sans-serif;
+      text-align: center;
+      background: #7F7FD5;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, #7F7FD5, #86A8E7, #91EAE4);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to bottom, #7F7FD5, #86A8E7, #91EAE4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .btn-circle-fishy {
+      display: inline-block;
+      text-decoration: none;
+      color: #FFF;
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      border-radius: 50%;
+      text-align: center;
+      overflow: hidden;
+      background: #fc4a1a;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      transition: .4s;
+      font-size: 2em;
+      letter-spacing: .1em;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, .3);
+    }
+    .btn-circle-fishy:active {
+      -webkit-transform: rotate(10deg);
+      transform: rotate(10deg);
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
+    }
+    .title {
+      padding: 80px 0px 40px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">今日の体温は...</h1>
+  <a href="#" class="btn-circle-fishy" id="display">TAP</a>
+</body>
+<script>
+  {
+    'use strict';
+    const getBodyTemp = () => {
+      const maxTemp = 37.3;
+      const minTemp = 35.9;
+      const bodyTemp = Math.floor((Math.random() * (maxTemp - minTemp) + minTemp) * 10) / 10;
+      return bodyTemp;
+    };
+    const display = document.getElementById('display');
+    display.onclick = () => {
+      display.textContent = String(getBodyTemp()) + "℃";
+    }
+  }
+</script>
+</html>
