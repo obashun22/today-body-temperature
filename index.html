@@ -11,6 +11,7 @@
     body {
       font-family: 'Kosugi Maru', sans-serif;
       text-align: center;
+      color: white;
       background: #7F7FD5;  /* fallback for old browsers */
       background: -webkit-linear-gradient(to bottom, #7F7FD5, #86A8E7, #91EAE4);  /* Chrome 10-25, Safari 5.1-6 */
       background: linear-gradient(to bottom, #7F7FD5, #86A8E7, #91EAE4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -40,19 +41,32 @@
     }
     .title {
       padding: 80px 0px 40px;
-      color: white;
+    }
+    .container {
+      width: 400px;
+      margin: auto;
+    }
+    h3 {
+      padding: 30px 0px 5px;
     }
   </style>
 </head>
 <body>
-  <h1 class="title">今日の体温は...</h1>
-  <a href="#" class="btn-circle-fishy" id="display">TAP</a>
+  <div class="container">
+    <h1 class="title">今日の体温は...</h1>
+    <a href="#" class="btn-circle-fishy" id="display">TAP</a>
+    <h3>使い方</h3>
+    <p>
+      「TAP」を押すと今日のあなたの体温が決まります。
+      気に入らなかったらもう一回押してください。何か起こるかもしれません。
+    </p>
+  </div>
 </body>
 <script>
   {
     'use strict';
     const getBodyTemp = () => {
-      const maxTemp = 37.3;
+      const maxTemp = 37.0;
       const minTemp = 35.9;
       const bodyTemp = Math.floor((Math.random() * (maxTemp - minTemp) + minTemp) * 10) / 10;
       return bodyTemp;
